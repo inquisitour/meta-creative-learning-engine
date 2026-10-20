@@ -1,0 +1,78 @@
+{
+  "daily_budget_eur": 400.0,
+  "assumed_cpm_eur": 8.94,
+  "primary_metric": "ctr",
+  "sample_size_basis": {
+    "alpha": 0.05,
+    "power": 0.8,
+    "ctr_relative_mde": 0.15,
+    "cvr_relative_mde": 0.2,
+    "impressions_needed_for_ctr": 44026,
+    "impressions_needed_for_purchase_level": 922052
+  },
+  "stopping_rule": "Do not read results before every cell reaches min_impressions and min_days. Decide on CTR: adopt a variant only if its 95% CI vs the champion excludes 0; otherwise keep the champion. Purchase effects are not tested per cell (see purchase_test_days_if_run_alone); they stay estimated by the pooled model, which is refit whenever new results arrive.",
+  "cells": [
+    {
+      "cell_id": "A_incumbent",
+      "role": "control",
+      "attributes": {
+        "hook": "social_proof",
+        "visual": "unboxing",
+        "cta": "gift_now",
+        "format": "video"
+      },
+      "hypothesis": "Baseline: best existing ad (AD-042).",
+      "budget_share": 0.2,
+      "min_impressions": 45000,
+      "min_days": 6,
+      "purchase_test_days_if_run_alone": 103
+    },
+    {
+      "cell_id": "B_champion",
+      "role": "exploit",
+      "attributes": {
+        "hook": "social_proof",
+        "visual": "gift_scene",
+        "cta": "gift_now",
+        "format": "carousel"
+      },
+      "changes_vs_control": [
+        {
+          "attribute": "visual",
+          "from": "unboxing",
+          "to": "gift_scene"
+        },
+        {
+          "attribute": "format",
+          "from": "video",
+          "to": "carousel"
+        }
+      ],
+      "hypothesis": "Stacking all proven winners beats the incumbent (checks that effects add up instead of interfering).",
+      "budget_share": 0.3,
+      "min_impressions": 45000,
+      "min_days": 4,
+      "purchase_test_days_if_run_alone": 69
+    },
+    {
+      "cell_id": "C_explore_hook_offer_led",
+      "role": "explore",
+      "attributes": {
+        "hook": "offer_led",
+        "visual": "gift_scene",
+        "cta": "gift_now",
+        "format": "carousel"
+      },
+      "single_variable": {
+        "attribute": "hook",
+        "from": "social_proof",
+        "to": "offer_led"
+      },
+      "hypothesis": "hook=offer_led could beat social_proof (current estimate +21.6%, upper bound +50.1%).",
+      "budget_share": 0.5,
+      "min_impressions": 45000,
+      "min_days": 3,
+      "purchase_test_days_if_run_alone": 42
+    }
+  ]
+}

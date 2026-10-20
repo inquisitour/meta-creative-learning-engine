@@ -1,0 +1,86 @@
+[
+  {
+    "cell_id": "A_incumbent",
+    "role": "control",
+    "hook": {
+      "type": "social_proof",
+      "instruction": "Open with a concrete customer number, quote or rating."
+    },
+    "visual": {
+      "concept": "unboxing",
+      "format": "video"
+    },
+    "cta": {
+      "type": "gift_now",
+      "button_text": "Find the perfect gift"
+    },
+    "hypothesis": "Baseline: best existing ad (AD-042).",
+    "guardrails": [
+      "Brand tone: warm, natural, understated. No fake urgency.",
+      "No unverifiable claims (numbers must come from the approved fact sheet).",
+      "Max 125 characters primary text; headline max 40 characters."
+    ],
+    "copy_options": [
+      "Loved by 100,000+ customers who wanted something different.",
+      "'The first watch people actually ask about.' - verified buyer",
+      "4.8 stars from thousands of happy wrists."
+    ],
+    "status": "needs_brand_approval"
+  },
+  {
+    "cell_id": "B_champion",
+    "role": "exploit",
+    "hook": {
+      "type": "social_proof",
+      "instruction": "Open with a concrete customer number, quote or rating."
+    },
+    "visual": {
+      "concept": "gift_scene",
+      "format": "carousel"
+    },
+    "cta": {
+      "type": "gift_now",
+      "button_text": "Find the perfect gift"
+    },
+    "hypothesis": "Stacking all proven winners beats the incumbent (checks that effects add up instead of interfering).",
+    "guardrails": [
+      "Brand tone: warm, natural, understated. No fake urgency.",
+      "No unverifiable claims (numbers must come from the approved fact sheet).",
+      "Max 125 characters primary text; headline max 40 characters."
+    ],
+    "copy_options": [
+      "Loved by 100,000+ customers who wanted something different.",
+      "'The first watch people actually ask about.' - verified buyer",
+      "4.8 stars from thousands of happy wrists."
+    ],
+    "status": "needs_brand_approval"
+  },
+  {
+    "cell_id": "C_explore_hook_offer_led",
+    "role": "explore",
+    "hook": {
+      "type": "offer_led",
+      "instruction": "Open with the concrete offer (price, bundle, free engraving)."
+    },
+    "visual": {
+      "concept": "gift_scene",
+      "format": "carousel"
+    },
+    "cta": {
+      "type": "gift_now",
+      "button_text": "Find the perfect gift"
+    },
+    "hypothesis": "hook=offer_led could beat social_proof (current estimate +21.6%, upper bound +50.1%).",
+    "guardrails": [
+      "Brand tone: warm, natural, understated. No fake urgency.",
+      "No unverifiable claims (numbers must come from the approved fact sheet).",
+      "Max 125 characters primary text; headline max 40 characters."
+    ],
+    "copy_options": [
+      "Free engraving on every watch this week.",
+      "Bundle a watch and a strap and save, today only.",
+      "Gift-ready packaging included, no extra cost."
+    ],
+    "status": "needs_brand_approval"
+  }
+]
