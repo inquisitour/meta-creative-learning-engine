@@ -68,7 +68,7 @@ the champion in exactly one attribute and could plausibly beat it; copy is withi
 brief is routed to brand approval. On failure the run refuses to release output
 and lists every violation.
 
-## How I know it works
+## Why it works
 
 The dummy data has **planted ground-truth effects** (`data/generate_data.py`), so
 the tests can check the engine against the truth:
@@ -77,7 +77,7 @@ the tests can check the engine against the truth:
 - In a world where nothing matters, it stays quiet (under 10% false verdicts).
 - The validator catches deliberately corrupted outputs.
 
-## Limits (deliberate, and what I would do next)
+## Limits (deliberate, and what's next)
 
 - **Expected false positives.** 15 levels at 95% gives about 0.75 false verdicts per
   run. On the default data, `format=carousel` is flagged a winner although its true
