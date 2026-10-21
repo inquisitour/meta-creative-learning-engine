@@ -1,16 +1,11 @@
-# Creative learning engine (Task 3 prototype)
+# Creative learning engine
 
 One component of a Meta creative testing engine: it takes ad results, works out
 **which creative attributes actually drive performance**, decides **what to test
 next**, writes **generation briefs** for the next iteration, and **routes the
 learnings to the right team**. Nothing is released unless a set of invariants holds.
 
-```
-ads.csv ──> analyze ──> learnings ──> planner ──> test plan ──> briefs ──> validate ──> routing
-(per ad:     (multivariable   (winner / loser /    (incumbent,    (copy +     (invariant   (content / visual /
- attributes   logistic model,  inconclusive /       champion,      visual      checker;     performance reports)
- + results)   95% intervals)   insufficient)        explore cells) specs)      refuses on failure)
-```
+![creative-learning-pipeline](image.png)
 
 ## Run it
 
